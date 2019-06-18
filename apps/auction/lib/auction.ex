@@ -3,9 +3,9 @@ defmodule Auction do
   Documentation for Auction.
   """
 
-  alias Auction.{FakeRepo, Item}
+  alias Auction.Item
 
-  @repo FakeRepo
+  @repo Auction.Repo
 
   def list_items do
     @repo.all(Item)
@@ -17,5 +17,11 @@ defmodule Auction do
 
   def get_item_by(attrs) do
     @repo.get_by(Item, attrs)
+  end
+
+  def insert_item(attrs) do
+    Auction.Item
+    |> struct(attrs)
+    |> @repo.insert()
   end
 end
