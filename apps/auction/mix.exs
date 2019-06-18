@@ -26,7 +26,7 @@ defmodule Auction.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:credo, "~> 1.0.0", only: [:dev, :test], runtime: false},
+      # {:credo, "~> 1.0.0", only: [:dev, :test], runtime: false},
       {:ecto_sql, "~> 3.1.5"},
       {:postgrex, "~> 0.14.3"},
 
