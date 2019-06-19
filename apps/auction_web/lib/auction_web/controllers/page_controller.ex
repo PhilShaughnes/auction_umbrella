@@ -5,3 +5,4 @@ defmodule AuctionWeb.PageController do
     render(conn, "index.html", items: Auction.list_items)
   end
 end
+
