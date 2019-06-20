@@ -29,6 +29,8 @@ defmodule Auction.MixProject do
       # {:credo, "~> 1.0.0", only: [:dev, :test], runtime: false},
       {:ecto_sql, "~> 3.1.5"},
       {:postgrex, "~> 0.14.3"},
+      {:comeonin, "~> 5.1.2"},
+      {:pbkdf2_elixir, "~> 1.0.2"}
 
       # {:dep_from_hexpm, "~> 0.3.0"},
       # {:dep_from_git, git: "https://github.com/elixir-lang/my_dep.git", tag: "0.1.0"},
