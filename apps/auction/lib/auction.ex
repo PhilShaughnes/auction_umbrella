@@ -3,7 +3,7 @@ defmodule Auction do
   Documentation for Auction.
   """
 
-  alias Auction.{Item, User, Password}
+  alias Auction.{Bid, Item, User, Password}
 
   @repo Auction.Repo
 
@@ -55,5 +55,13 @@ defmodule Auction do
       _ -> Password.dummy_verify
     end
   end
+
+  def insert_bid(params) do
+    %Bid{}
+    |> Bid.changeset(params)
+    |> @repo.insert()
+  end
+
+  def new_bid, do: Bid.changeset(%Bid{})
 
 end
