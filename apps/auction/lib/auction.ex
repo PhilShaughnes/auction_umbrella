@@ -19,6 +19,13 @@ defmodule Auction do
     @repo.get_by(Item, attrs)
   end
 
+  # doesn't this do multiple queries?
+  def get_item_with_bids(id) do
+    id
+    |> get_item()
+    |> @repo.preload(bids: [:user])
+  end
+
   def insert_item(attrs) do
     %Item{}
     |> Item.changeset(attrs)
