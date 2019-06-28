@@ -2,6 +2,7 @@ defmodule Auction do
   @moduledoc """
   Documentation for Auction.
   """
+  import Ecto.Query
 
   alias Auction.{Bid, Item, User, Password}
 

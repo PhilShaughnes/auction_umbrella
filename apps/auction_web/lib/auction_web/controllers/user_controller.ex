@@ -4,7 +4,7 @@ defmodule AuctionWeb.UserController do
 
   def show(conn, %{"id" => id}) do
     user = Auction.get_user(id)
-    bids = Auction.get)bids_for_user(user)
+    bids = Auction.get_bids_for_user(user)
     render conn, "show.html", user: user, bids: bids
   end
 
