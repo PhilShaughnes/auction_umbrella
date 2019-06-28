@@ -3,7 +3,9 @@ defmodule AuctionWeb.UserController do
   plug :prevent_unauthorized_access when action in [:show]
 
   def show(conn, %{"id" => id}) do
-    render conn, "show.html", user: Auction.get_user(id)
+    user = Auction.get_user(id)
+    bids = Auction.get)bids_for_user(user)
+    render conn, "show.html", user: user, bids: bids
   end
 
   def new(conn, _paraams) do
