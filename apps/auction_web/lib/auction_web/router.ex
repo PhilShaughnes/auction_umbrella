@@ -41,9 +41,20 @@ defmodule AuctionWeb.Router do
   end
 
   # Other scopes may use custom stacks.
-  scope "/api", AuctionWeb.Api do
+  scope "/json", AuctionWeb.Api do
     pipe_through :api
 
     resources "/items", ItemController, only: [:index, :show]
+  end
+
+  scope "/gql" do
+    pipe_through :api
+
+    forward "/api", Absinthe.Plug,
+      schema: AuctionWeb.Schema
+
+    forward "/graphiql", Absinthe.Plug.GraphiQL,
+      schema: AuctionWeb.Schema,
+      interface: :playground
   end
 end

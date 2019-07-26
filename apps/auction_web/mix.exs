@@ -46,7 +46,10 @@ defmodule AuctionWeb.MixProject do
       {:plug_cowboy, "~> 2.0"},
       {:auction, in_umbrella: true},
       {:phoenix_ecto, "~> 4.0"},
-      {:timex, "~> 3.6"}
+      {:timex, "~> 3.6"},
+      {:absinthe, "~> 1.4"},
+      {:absinthe_plug, "~> 1.4"},
+      {:absinthe_phoenix, "~> 1.4"}
     ]
   end
 
